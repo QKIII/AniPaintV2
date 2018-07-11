@@ -7,41 +7,101 @@ var aniPick = aniData[0]
 
 var counter = 1
 
+var brushIcon = lottie.loadAnimation({
+      container: document.getElementById('brush'),
+      renderer: 'svg',
+      loop: true,
+      autoplay: true,
+      animationData: aniPick
+  })
 
 $("#burst").click(function(e) {
   aniPick = aniData[0]
+  brushIcon.destroy()
+  brushIcon = lottie.loadAnimation({
+      container: document.getElementById('brush'),
+      renderer: 'svg',
+      loop: true,
+      autoplay: true,
+      animationData: aniPick
+  })
 })
 $("#morph").click(function(e) {
   aniPick = aniData[1]
+  brushIcon.destroy()
+  brushIcon = lottie.loadAnimation({
+      container: document.getElementById('brush'),
+      renderer: 'svg',
+      loop: true,
+      autoplay: true,
+      animationData: aniPick
+  })
 })
 $("#ball").click(function(e) {
   aniPick = aniData[2]
+  brushIcon.destroy()
+  brushIcon = lottie.loadAnimation({
+      container: document.getElementById('brush'),
+      renderer: 'svg',
+      loop: true,
+      autoplay: true,
+      animationData: aniPick
+  })
 })
 $("#spiral").click(function(e) {
   aniPick = aniData[3]
+  brushIcon.destroy()
+  brushIcon = lottie.loadAnimation({
+      container: document.getElementById('brush'),
+      renderer: 'svg',
+      loop: true,
+      autoplay: true,
+      animationData: aniPick
+  })
+})
+
+// Animation picker
+var burstBrush = lottie.loadAnimation({
+    container: document.getElementById('burst'),
+    renderer: 'svg',
+    loop: true,
+    autoplay: true,
+    animationData: burst
+})
+var morphBrush = lottie.loadAnimation({
+    container: document.getElementById('morph'),
+    renderer: 'svg',
+    loop: true,
+    autoplay: true,
+    animationData: morph
+})
+var ballBrush = lottie.loadAnimation({
+    container: document.getElementById('ball'),
+    renderer: 'svg',
+    loop: true,
+    autoplay: true,
+    animationData: ball
+})
+var spiralBrush = lottie.loadAnimation({
+    container: document.getElementById('spiral'),
+    renderer: 'svg',
+    loop: true,
+    autoplay: true,
+    animationData: spiral
 })
 
 $("#follower").click(function(e) {
-
   counter++
-
-  // Switch animation every click
-  // var aniSwitch = aniCount % 2
-  // var aniPick = aniData[aniSwitch]
-
   $("#follower").append('<div class="bm" id="bm-' + counter + '"> </div>')
-  var animation = lottie.loadAnimation({
+  var currentBrush = lottie.loadAnimation({
       container: document.getElementById('bm-' + counter),
       renderer: 'svg',
       loop: true,
       autoplay: false,
       animationData: aniPick
-
   })
 
-  // increase count for animation switch
-  // aniCount++;
-  animation.goToAndPlay(0, 0)
+  currentBrush.goToAndPlay(0, 0)
   $('#bm-' + counter).css({
       left: e.pageX - 200,
       top: e.pageY - 200
@@ -56,3 +116,24 @@ $("#undo").click(function(e) {
         $("#bm-" + (counter)).remove();
       
 })
+  var settings = lottie.loadAnimation({
+      container: document.getElementById('setting'),
+      renderer: 'svg',
+      loop: true,
+      autoplay: true,
+      animationData: aniPick
+  })
+  var undo = lottie.loadAnimation({
+      container: document.getElementById('undo'),
+      renderer: 'svg',
+      loop: true,
+      autoplay: true,
+      animationData: aniPick
+  })
+  var screenshot = lottie.loadAnimation({
+      container: document.getElementById('screenshot'),
+      renderer: 'svg',
+      loop: true,
+      autoplay: true,
+      animationData: aniPick
+  })

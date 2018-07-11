@@ -1,3 +1,6 @@
+:root {
+ --theColor: black;
+}
 html,
 body {
 
@@ -15,52 +18,71 @@ body {
     float: left;
 }
 
+.popup{
+    position: relative;
+    display: block;
+    background: black;
+    height: 100px;
+    width: 30%;
+    border:5px solid black;
+    margin: 0 auto;
+    top: -270px;
+    z-index: 9;
+    border-radius: 15px;
+}
+.item{
+    width:100px;
+    height:100px;
+    z-index: 10;
+}
+.brush path{
+    stroke:white;
+    fill:white;
+}
+
 .nav {
     width: 100%;
-    height: 200px;
+    height: 150px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 10px;
+    position:fixed;
+    display: block;
+    bottom:0px;
+    background-color: #ffffff;
+    border-top: 10px solid var(--theColor);
+}
+.tools{
+    width: 300px;
+    height: 100%;
+    margin:0 auto;
+}
+.brushes{
+    width: 150px;
+    height: 150px;
+    float:left;
 }
 
-.btn {
-    margin: 25px;
-    width: 100px;
-    height: 50px;
-    border-radius: 10px;
-    display: inline-block;
+.setting{
+    width: 150px;
+    height: 150px;
+    float:right;
 }
-
-.minus {
+.undo{
+    width: 150px;
+    height: 150px;
     float: left;
-    background-color: red;
+    margin-left: 30px;
+}
+.screenshot{
+    width: 150px;
+    height: 150px;
+    float: right;
+    margin-right: 30px;
 }
 
-.play {
-    float: left;
-    background-color: green;
-}
-
-.slider {
-    width: 100%;
-}
-
-.slide {
-    -webkit-appearance: none;
-    /* Override default CSS styles */
-    appearance: none;
-    width: 100%;
-    /* Full-width */
-    height: 25px;
-    /* Specified height */
-    background: #d3d3d3;
-    /* Grey background */
-    outline: none;
-    /* Remove outline */
-    opacity: 0.7;
-    /* Set transparency (for mouse-over effects on hover) */
-    -webkit-transition: .2s;
-    /* 0.2 seconds transition on hover */
-    transition: opacity .2s;
+.button {
+    background-color: var(--theColor);
+    border-color: var(--theColor);
 }
 
 #follower {

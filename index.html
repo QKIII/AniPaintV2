@@ -18,48 +18,108 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
     <link rel="stylesheet" href="https://cdn.rawgit.com/necolas/normalize.css/master/normalize.css">
     <link rel="stylesheet" href="https://cdn.rawgit.com/milligram/milligram/master/dist/milligram.min.css">
-
-    <link rel="stylesheet" type="text/css" href="main.css">
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+    <!-- owl carousel -->
+    <link rel="stylesheet" href="owl.theme.default.min.css">
+    <link rel="stylesheet" href="owl.carousel.min.css">
+    <script type="text/javascript" src="owl.carousel.min.js"></script>
+
+    <!-- custom CSS aka the goodstuff -->
+    <link rel="stylesheet" type="text/css" href="main.css">
 </head>
 
 <body>
-   
+   <!-- The Animation Canvas -->
         <div id="follower">
             <div id="bm"> </div>
         </div>
+    <!-- End Animation Canvas -->
+
+    <!-- Old UI -->
         <div class="ui">
             <div class="row">
                 <div class="column">
-                    <a class="button" id="burst">Burst</a>
+<!--                     <a class="button" id="burst">Burst</a>
                     <a class="button" id="morph">Morph</a>
                     <a class="button" id="ball">Ball</a>
-                    <a class="button" id="spiral">Spiral</a>
+                    <a class="button" id="spiral">Spiral</a> -->
                 </div>
             </div>
-            <div class="row">
+<!--             <div class="row">
                 <div class="column">
-                    <a class="button" id="undo">UNDO</a>
+                    <a class="button" id="undo2">UNDO</a>
                 </div>
+            </div> -->
+        </div>
+    <!-- End Old UI -->
+
+    <div class="popup">
+    <!-- Brush Select -->
+        <div class="brush">
+            <div class="owl-carousel owl-theme owl-brush steps">
+                <div id="burst" class="item" >
+                </div>
+                <div id="morph" class="item">
+                </div>
+                <div id="ball" class="item">
+                </div>
+                <div id="spiral" class="item">
+                </div>
+
             </div>
         </div>
-
-    <!--    <div class="nav">
-        <div class="btn play"></div>
-        <div class="btn minus"></div>
-        
-    </div> -->
-    <!-- 
-    <div class="slider">
-        <input class="slide" id="speedSlide" type="range" min="0" max="50" value=".1" oninput="speedChange()" >
+    <!-- End Brush Select -->
+    <!-- Settings -->
+        <div class="settings">
+            
+        </div>
+    <!-- End Settings -->
     </div>
-    <div class="slider">
-        <input class="slide"  id="sizeSlide" type="range" min="1" max="50" value=".1" oninput="sizeChange()">
-    </div> -->
+
+    <!-- Nav -->
+    <div class="nav">
+        <div class="undo">
+            <div id="undo"></div>
+        </div>
+        <div class="screenshot">    
+        <div id="screenshot"></div>
+        </div>
+        <div class="tools">
+            <div class="brushes">
+                <div id="brush"></div>
+            </div>
+            <div class="setting">
+                <div id="setting"></div>
+            </div>
+        </div>
+    </div>
+    <!-- End Nav -->
+    
+
+
     <!-- Lottie JS -->
     <script type="text/javascript" src="lottie.js"></script>
     <!-- animation script -->
     <script src="index.js"></script>
+    <script>
+       $(document).ready(function() {
+        // OWL Carousel slider config                 
+        $('.owl-brush').owlCarousel({
+            center: false,
+            items:4,
+            loop:false,
+            margin:20,
+            dots:false,
+            responsive:{
+                600:{
+                    items:4
+                }
+            }
+        });
+    });
+
+    </script>
 </body>
 
 </html>
