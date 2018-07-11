@@ -137,3 +137,11 @@ $("#undo").click(function(e) {
       autoplay: true,
       animationData: aniPick
   })
+
+
+  // UI Animations
+  $(document).ready(function(){
+    $( "#brush" ).click(function() {
+      $( "#popup" ).toggle();
+    });
+    });
